@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <title>Portafolio — Marcos Vallarta</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Galería ampliada de trabajos de enmarcación: jerseys, objetos 3D, restauraciones y marcos a la medida." />
+  <link rel="icon" href="LOGO MARCOS VALLARTA.png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html">
+        <img src="LOGO MARCOS VALLARTA.png" alt="Logo Marcos Vallarta" height="42" />
+        <span>Marcos Vallarta</span>
+      </a>
+      <nav>
+        <a href="index.html#servicios">Servicios</a>
+        <a class="btn" href="index.html#contacto">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container section">
+    <h1>Portafolio</h1>
+    <p class="muted">Explora más ejemplos. Clic para ampliar.</p>
+
+    <div class="gallery gallery-wide">
+      <figure class="item"><img src="IMG_5196.jpg" alt="Jersey enmarcado" data-caption="Jersey enmarcado — vitrina a medida" /></figure>
+      <figure class="item"><img src="IMG_4788.JPG" alt="Obra enmarcada profesionalmente" data-caption="Enmarcación con conservación" /></figure>
+      <figure class="item"><img src="IMG_1900.JPG" alt="Marco dorado clásico" data-caption="Enmarcación a la medida — marco dorado" /></figure>
+      <figure class="item"><img src="IMG_1898.JPG" alt="Obra con paspartú" data-caption="Selección de marialuisa para realce y protección" /></figure>
+      <figure class="item"><img src="3225FBA6-CDC6-43A9-897A-B3644DEF4C14.JPG" alt="Camiseta enmarcada detalle" data-caption="Caja a medida para camiseta" /></figure>
+      <figure class="item"><img src="IMG_4577.JPG" alt="Raqueta enmarcada" data-caption="Objeto 3D — raqueta en caja" /></figure>
+      <figure class="item"><img src="36313585_209451786345577_2081834806592667648_o.jpg" alt="Restauración religiosa" data-caption="Restauración — pieza religiosa" /></figure>
+      <!-- Agrega más imágenes aquí si lo deseas -->
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>© <span id="y"></span> Marcos Vallarta</small>
+    </div>
+  </footer>
+
+  <!-- Reutilizamos el mismo modal -->
+  <div class="modal" id="lightbox" aria-hidden="true" role="dialog" aria-label="Imagen ampliada">
+    <button class="close" id="closeModal" aria-label="Cerrar">×</button>
+    <img id="lightboxImg" alt="" />
+    <figcaption id="lightboxCap"></figcaption>
+    <a class="btn" href="index.html#contacto">Solicitar cotización</a>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
