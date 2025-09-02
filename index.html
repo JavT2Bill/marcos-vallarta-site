@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Marcos Vallarta — Enmarcaciones Finas en Guadalajara</title>
+  <meta name="description" content="Enmarcaciones a la medida, restauración y conservación de obras, jerseys y objetos 3D en Guadalajara. Calidad de galería y atención personalizada." />
+  <meta property="og:title" content="Marcos Vallarta — Enmarcaciones Finas en Guadalajara" />
+  <meta property="og:description" content="Enmarcaciones a la medida, restauración y conservación de obras, jerseys y objetos 3D en Guadalajara." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="./assets/og-cover.jpg" />
+  <meta name="theme-color" content="#28B8C0" />
+
+  <!-- Fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="./assets/favicon-32.png" sizes="32x32">
+
+  <!-- Tailwind (CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'ui-sans-serif'],
+            serif: ['Playfair Display', 'ui-serif']
+          },
+          colors: {
+            brand: { 400:'#2FCAD2', 500:'#28B8C0', 600:'#1FA2A9' },
+            coffee: { 700:'#201008' }
+          },
+          boxShadow: { soft:'0 10px 30px rgba(0,0,0,.08)' }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    .btn-brand { background: linear-gradient(135deg, #2FCAD2, #28B8C0 45%, #1FA2A9); }
+    .focus-ring:focus { outline: 3px solid #28B8C0; outline-offset: 2px; }
+    .hero-overlay { background: linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,255,255,.70) 35%, rgba(255,255,255,0) 75%); }
+  </style>
+</head>
+
+<body class="bg-white text-neutral-900 antialiased">
+  <!-- Topbar -->
+  <div class="text-sm text-neutral-600">
+    <div class="max-w-6xl mx-auto px-6 py-2 flex items-center justify-between">
+      <span>Homero 45, Vallarta San Jorge, Guadalajara</span>
+      <div class="space-x-4">
+        <a href="tel:+523329231790" class="hover:underline">+52 33 2923 1790</a>
+        <a href="https://wa.me/523329231790?text=Hola%20Marcos%20Vallarta,%20quiero%20una%20cotizaci%C3%B3n" class="text-brand-600 hover:underline">WhatsApp</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <header class="sticky top-0 z-40 bg-white/70 backdrop-blur border-b border-neutral-200">
+    <div class="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between gap-6">
+      <a href="#" class="flex items-center gap-3">
+        <img src="./assets/logo-mv.png" alt="Marcos Vallarta" class="h-8 w-auto">
+        <span class="font-serif text-2xl">Marcos <span class="text-brand-500">Vallarta</span></span>
+      </a>
+      <nav class="hidden md:flex items-center gap-8 text-lg">
+        <a href="#servicios" class="hover:text-brand-600">Servicios</a>
+        <a href="#portafolio" class="hover:text-brand-600">Portafolio</a>
+        <a href="#proceso" class="hover:text-brand-600">Proceso</a>
+        <a href="#opiniones" class="hover:text-brand-600">Opiniones</a>
+        <a href="#selector" class="hover:text-brand-600">Cotiza</a>
+      </nav>
+      <a href="https://wa.me/523329231790?text=Hola%20Marcos%20Vallarta,%20quiero%20cotizar%20un%20marco" class="btn-brand text-white font-semibold px-5 py-2 rounded-xl shadow-soft">Cotiza ahora</a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="relative">
+    <img src="./assets/hero-montaje.jpg" alt="Muestrario de molduras" class="w-full h-[50vh] object-cover">
+    <div class="absolute inset-0 hero-overlay"></div>
+    <div class="max-w-6xl mx-auto px-6 py-10 md:py-16">
+      <h1 class="font-serif text-4xl md:text-6xl leading-tight">Enmarcaciones a la medida<br class="hidden md:block"> con <span class="text-brand-600">acabado de galería</span></h1>
+      <p class="mt-4 max-w-2xl text-lg text-neutral-700">Pinturas, diplomas, camisetas deportivas y recuerdos que merecen un marco perfecto. Conservación profesional y asesoría personalizada.</p>
+      <div class="mt-6 flex gap-4">
+        <a href="#servicios" class="px-5 py-3 rounded-xl border border-neutral-300 hover:border-neutral-400 focus-ring">Ver servicios</a>
+        <a href="https://wa.me/523329231790?text=Hola%20Marcos%20Vallarta,%20quiero%20una%20cotizaci%C3%B3n" class="btn-brand text-white font-semibold px-5 py-3 rounded-xl shadow-soft">Escríbenos por WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Servicios -->
+  <section id="servicios" class="py-20">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="md:flex items-end justify-between gap-8">
+        <h2 class="font-serif text-3xl md:text-4xl">Servicios</h2>
+        <p class="max-w-2xl text-neutral-700">Enmarcación a la medida para obras, diplomas, fotografías y jerseys; cajas de sombra y objetos 3D; restauración y conservación con criterios de museo.</p>
+      </div>
+      <div class="mt-12 grid md:grid-cols-3 gap-6">
+        <article class="bg-white border border-neutral-200 rounded-2xl overflow-hidden hover:shadow-soft transition">
+          <img src="./assets/servicio-enmarcacion.jpg" alt="Enmarcación a la medida" class="h-48 w-full object-cover">
+          <div class="p-6">
+            <h3 class="font-serif text-2xl">Enmarcación a la medida</h3>
+            <p class="mt-2 text-neutral-700">Paspartú libre de ácido, vidrio museo, montaje flotado y filetes.</p>
+          </div>
+        </article>
+        <article class="bg-white border border-neutral-200 rounded-2xl overflow-hidden hover:shadow-soft transition">
+          <img src="./assets/servicio-jersey.jpg" alt="Jerseys y objetos 3D" class="h-48 w-full object-cover">
+          <div class="p-6">
+            <h3 class="font-serif text-2xl">Jerseys y objetos 3D</h3>
+            <p class="mt-2 text-neutral-700">Cajas de sombra y sistemas de fijación seguros para memorabilia.</p>
+          </div>
+        </article>
+        <article class="bg-white border border-neutral-200 rounded-2xl overflow-hidden hover:shadow-soft transition">
+          <img src="./assets/servicio-restauracion.jpg" alt="Restauración y conservación" class="h-48 w-full object-cover">
+          <div class="p-6">
+            <h3 class="font-serif text-2xl">Restauración y conservación</h3>
+            <p class="mt-2 text-neutral-700">Limpieza, resanes y conservación preventiva por especialistas.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Molduras & materiales -->
+  <section id="molduras" class="py-20 bg-neutral-50 border-y border-neutral-200">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="md:flex items-end justify-between gap-8">
+        <h2 class="font-serif text-3xl md:text-4xl">Molduras & materiales</h2>
+        <p class="max-w-2xl text-neutral-700">Selección curada para lograr el acabado ideal en cada pieza.</p>
+      </div>
+      <div class="mt-10 grid grid-cols-2 md:grid-cols-3 gap-6">
+        <article class="bg-white border border-neutral-200 rounded-2xl p-6">
+          <h3 class="font-serif text-xl">Poliestireno</h3>
+          <p class="mt-2 text-sm text-neutral-600">Ligero, versátil y con variedad de acabados.</p>
+        </article>
+        <article class="bg-white border border-neutral-200 rounded-2xl p-6">
+          <h3 class="font-serif text-xl">Madera</h3>
+          <p class="mt-2 text-sm text-neutral-600">Clásica y cálida; tonos naturales y lacados.</p>
+        </article>
+        <article class="bg-white border border-neutral-200 rounded-2xl p-6">
+          <h3 class="font-serif text-xl">MDF</h3>
+          <p class="mt-2 text-sm text-neutral-600">Acabados uniformes para propuestas modernas.</p>
+        </article>
+      </div>
+      <div class="mt-8 flex flex-wrap gap-3 text-sm">
+        <span class="px-3 py-1 rounded-full border border-neutral-300">Vidrio de conservación (UV)</span>
+        <span class="px-3 py-1 rounded-full border border-neutral-300">Marialuisa libre de ácido</span>
+        <span class="px-3 py-1 rounded-full border border-neutral-300">Foamboard</span>
+        <span class="px-3 py-1 rounded-full border border-neutral-300">Herrajes y colgadores</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Selector de Molduras -->
+  <section id="selector" class="py-20">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="md:flex items-end justify-between gap-8">
+        <h2 class="font-serif text-3xl md:text-4xl">Elige tu combinación</h2>
+        <p class="max-w-2xl text-neutral-700">Selecciona material, ancho, acabado y uso. El mensaje en WhatsApp se llenará automáticamente.</p>
+      </div>
+
+      <div class="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4">
+        <select id="selMaterial" class="w-full border border-neutral-300 rounded-xl px-4 py-3 bg-white">
+          <option>Poliestireno</option>
+          <option>Madera</option>
+          <option>MDF</option>
+        </select>
+        <select id="selAncho" class="w-full border border-neutral-300 rounded-xl px-4 py-3 bg-white">
+          <option>Delgado</option>
+          <option>Medio</option>
+          <option>Ancho</option>
+        </select>
+        <select id="selAcabado" class="w-full border border-neutral-300 rounded-xl px-4 py-3 bg-white">
+          <option>Mate</option>
+          <option>Brillo</option>
+          <option>Madera natural</option>
+          <option>Metalizado</option>
+        </select>
+        <select id="selUso" class="w-full border border-neutral-300 rounded-xl px-4 py-3 bg-white">
+          <option>Diploma</option>
+          <option>Jersey</option>
+          <option>Óleo/Acrílico</option>
+          <option>Fotografía</option>
+        </select>
+      </div>
+
+      <div class="mt-6 flex flex-wrap gap-4 items-center">
+        <a id="btnCotizar" href="https://wa.me/523329231790?text=Hola%20Marcos%20Vallarta,%20quiero%20cotizar%20un%20marco" class="btn-brand text-white font-semibold px-6 py-3 rounded-xl shadow-soft focus-ring">Cotizar esta combinación</a>
+      </div>
+      <p class="mt-2 text-sm text-neutral-600">* Si tienes un modelo específico, compártenos su nombre o una foto en el chat.</p>
+    </div>
+  </section>
+
+  <!-- Portafolio -->
+  <section id="portafolio" class="py-20 bg-neutral-50 border-t border-neutral-200">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="flex items-end justify-between">
+        <h2 class="font-serif text-3xl md:text-4xl">Portafolio</h2>
+        <a href="https://wa.me/523329231790?text=Hola%20Marcos%20Vallarta,%20tengo%20una%20pieza%20especial%20para%20cotizar" class="text-brand-600 hover:underline text-sm md:text-base">¿Tienes una pieza especial? Cotiza aquí →</a>
+      </div>
+      <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+        <figure class="bg-white rounded-2xl border border-neutral-200 p-2 shadow-soft">
+          <img class="h-48 w-full object-cover rounded-xl" src="./assets/gal-1.jpg" alt="Marco negro con paspartú blanco">
+          <figcaption class="mt-3 text-neutral-700">Marco negro con paspartú blanco</figcaption>
+        </figure>
+        <figure class="bg-white rounded-2xl border border-neutral-200 p-2 shadow-soft">
+          <img class="h-48 w-full object-cover rounded-xl" src="./assets/gal-2.jpg" alt="Enmarcado de jersey">
+          <figcaption class="mt-3 text-neutral-700">Enmarcado de jersey</figcaption>
+        </figure>
+        <figure class="bg-white rounded-2xl border border-neutral-200 p-2 shadow-soft">
+          <img class="h-48 w-full object-cover rounded-xl" src="./assets/gal-3.jpg" alt="Óleo restaurado">
+          <figcaption class="mt-3 text-neutral-700">Óleo restaurado</figcaption>
+        </figure>
+        <figure class="bg-white rounded-2xl border border-neutral-200 p-2 shadow-soft">
+          <img class="h-48 w-full object-cover rounded-xl" src="./assets/gal-4.jpg" alt="Filete dorado">
+          <figcaption class="mt-3 text-neutral-700">Filete dorado</figcaption>
+        </figure>
+        <figure class="bg-white rounded-2xl border border-neutral-200 p-2 shadow-soft">
+          <img class="h-48 w-full object-cover rounded-xl" src="./assets/gal-5.jpg" alt="Vidrio museo">
+          <figcaption class="mt-3 text-neutral-700">Vidrio museo</figcaption>
+        </figure>
+        <figure class="bg-white rounded-2xl border border-neutral-200 p-2 shadow-soft">
+          <img class="h-48 w-full object-cover rounded-xl" src="./assets/gal-6.jpg" alt="Caja de sombra">
+          <figcaption class="mt-3 text-neutral-700">Caja de sombra</figcaption>
+        </figure>
+        <figure class="bg-white rounded-2xl border border-neutral-200 p-2 shadow-soft">
+          <img class="h-48 w-full object-cover rounded-xl" src="./assets/gal-7.jpg" alt="Enmarcado para diploma">
+          <figcaption class="mt-3 text-neutral-700">Enmarcado para diploma</figcaption>
+        </figure>
+        <figure class="bg-white rounded-2xl border border-neutral-200 p-2 shadow-soft">
+          <img class="h-48 w-full object-cover rounded-xl" src="./assets/gal-8.jpg" alt="Detalles de moldura">
+          <figcaption class="mt-3 text-neutral-700">Detalles de moldura</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Proceso -->
+  <section id="proceso" class="py-20">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="font-serif text-3xl md:text-4xl">Nuestro proceso</h2>
+      <div class="grid md:grid-cols-3 gap-6 mt-10">
+        <div class="bg-white border border-neutral-200 rounded-2xl p-6">
+          <h3 class="font-semibold">1. Diagnóstico y propuesta</h3>
+          <p class="mt-2 text-neutral-700">Vemos tu pieza, proponemos moldura, paspartú y protección adecuada.</p>
+        </div>
+        <div class="bg-white border border-neutral-200 rounded-2xl p-6">
+          <h3 class="font-semibold">2. Producción cuidada</h3>
+          <p class="mt-2 text-neutral-700">Corte y armado profesional; conservación y materiales libres de ácido.</p>
+        </div>
+        <div class="bg-white border border-neutral-200 rounded-2xl p-6">
+          <h3 class="font-semibold">3. Entrega y montaje</h3>
+          <p class="mt-2 text-neutral-700">Revisión contigo y montaje listo para colgar.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Opiniones -->
+  <section id="opiniones" class="py-20 bg-neutral-50 border-y border-neutral-200">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="font-serif text-3xl md:text-4xl">Opiniones</h2>
+      <div class="mt-8 grid md:grid-cols-3 gap-6">
+        <blockquote class="bg-white border border-neutral-200 rounded-2xl p-6 shadow-soft">
+          <p class="text-neutral-800">“Excelente trabajo y trato. Mi jersey quedó increíble.”</p>
+          <footer class="mt-3 text-sm text-neutral-600">Cliente verificado</footer>
+        </blockquote>
+        <blockquote class="bg-white border border-neutral-200 rounded-2xl p-6 shadow-soft">
+          <p class="text-neutral-800">“Propuestas muy finas y materiales de primera.”</p>
+          <footer class="mt-3 text-sm text-neutral-600">Cliente verificado</footer>
+        </blockquote>
+        <blockquote class="bg-white border border-neutral-200 rounded-2xl p-6 shadow-soft">
+          <p class="text-neutral-800">“Cuidaron mi obra como si fuera suya. ¡Gracias!”</p>
+          <footer class="mt-3 text-sm text-neutral-600">Cliente verificado</footer>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-12">
+    <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-6 items-center">
+      <div>
+        <h3 class="font-serif text-2xl">Marcos <span class="text-brand-600">Vallarta</span></h3>
+        <p class="text-neutral-700 mt-2">Homero 45, Vallarta San Jorge, Guadalajara<br>Atención por WhatsApp y en taller.</p>
+      </div>
+      <div class="md:text-right">
+        <a href="https://wa.me/523329231790?text=Hola%20Marcos%20Vallarta,%20quiero%20una%20cotizaci%C3%B3n" class="btn-brand text-white font-semibold px-6 py-3 rounded-xl shadow-soft inline-block">Cotizar por WhatsApp</a>
+      </div>
+    </div>
+    <div class="max-w-6xl mx-auto px-6 mt-8 text-sm text-neutral-500">© <span id="y"></span> Marcos Vallarta. Todos los derechos reservados.</div>
+  </footer>
+
+  <script>
+    // WhatsApp auto-fill
+    (function(){
+      const phone = '523329231790';
+      const base = `https://wa.me/${phone}?text=`;
+      function update(){
+        const m  = document.getElementById('selMaterial').value;
+        const a  = document.getElementById('selAncho').value;
+        const ac = document.getElementById('selAcabado').value;
+        const u  = document.getElementById('selUso').value;
+        const msg = `Hola Marcos Vallarta, quiero cotizar un marco. Material: ${m}; Ancho: ${a}; Acabado: ${ac}; Uso: ${u}. ¿Sugerencias y tiempos de entrega?`;
+        document.getElementById('btnCotizar').setAttribute('href', base + encodeURIComponent(msg));
+      }
+      ['selMaterial','selAncho','selAcabado','selUso'].forEach(id => document.getElementById(id).addEventListener('change', update));
+      update();
+      document.getElementById('y').textContent = new Date().getFullYear();
+    })();
+  </script>
+</body>
+</html>
