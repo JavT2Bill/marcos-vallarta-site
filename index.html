@@ -81,7 +81,6 @@
   <header class="sticky top-0 z-40 bg-white/70 backdrop-blur border-b border-neutral-200">
     <div class="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between gap-6">
       <a href="#" class="flex items-center gap-3">
-        <!-- LOGO más grande -->
         <img src="./assets/logo-mv.png" alt="Marcos Vallarta" class="h-12 md:h-14 w-auto">
         <span class="font-serif text-2xl md:text-3xl">Marcos <span class="text-brand-500">Vallarta</span></span>
       </a>
@@ -92,7 +91,6 @@
         <a href="#proceso" class="hover:text-brand-600">Proceso</a>
         <a href="#opiniones" class="hover:text-brand-600">Opiniones</a>
         <a href="#selector" class="hover:text-brand-600">Cotiza</a>
-        <!-- Simulador en menú -->
         <a href="https://javt2bill.github.io/cotizador-marcos-vallarta/" target="_blank" rel="noopener" class="hover:text-brand-600">Simulador</a>
       </nav>
       <a href="https://wa.me/523329231790?text=Hola%20Marcos%20Vallarta,%20quiero%20cotizar%20un%20marco" class="btn-brand text-white font-semibold px-5 py-2 rounded-xl shadow-soft">Cotiza ahora</a>
@@ -103,7 +101,6 @@
   <section class="relative">
     <img src="./assets/hero-montaje.jpg" alt="Muestrario de molduras" class="w-full h-[50vh] object-cover">
     <div class="absolute inset-0 hero-overlay"></div>
-    <!-- z-10 asegura clics encima del overlay -->
     <div class="relative z-10 max-w-6xl mx-auto px-6 py-10 md:py-16">
       <h1 class="font-serif text-4xl md:text-6xl leading-tight">Enmarcaciones a la medida<br class="hidden md:block"> con <span class="text-brand-600">acabado de galería</span></h1>
       <p class="mt-4 max-w-2xl text-lg text-neutral-700">Pinturas, diplomas, camisetas deportivas y recuerdos que merecen un marco perfecto. Conservación profesional y asesoría personalizada.</p>
@@ -111,7 +108,6 @@
         <a href="#servicios" class="px-5 py-3 rounded-xl border border-neutral-300 hover:border-neutral-400 focus-ring">Ver servicios</a>
         <a href="https://wa.me/523329231790?text=Hola%20Marcos%20Vallarta,%20quiero%20una%20cotizaci%C3%B3n" class="btn-brand text-white font-semibold px-5 py-3 rounded-xl shadow-soft">Escríbenos por WhatsApp</a>
         <a href="https://www.google.com/maps?q=Homero+45,+Vallarta+San+Jorge,+Guadalajara" target="_blank" rel="noopener" class="px-5 py-3 rounded-xl border border-neutral-300 hover:border-neutral-400 focus-ring">Cómo llegar</a>
-        <!-- Botón Simulador en héroe -->
         <a href="https://javt2bill.github.io/cotizador-marcos-vallarta/" target="_blank" rel="noopener" class="px-5 py-3 rounded-xl border border-brand-500 text-brand-600 hover:bg-brand-50 focus-ring">Simulador</a>
       </div>
     </div>
@@ -268,6 +264,12 @@
           <figcaption class="mt-3 text-neutral-700">Restauración y enmarcado de óleo</figcaption>
         </figure>
       </div>
+
+      <!-- Botones a redes -->
+      <div class="mt-10 flex flex-wrap gap-4">
+        <a href="https://www.facebook.com/profile.php?id=100064111207075" target="_blank" rel="noopener" class="px-5 py-3 rounded-xl border border-neutral-300 hover:border-neutral-400">Ver más trabajos en Facebook</a>
+        <a href="https://www.tiktok.com/@marcosvallarta1" target="_blank" rel="noopener" class="btn-brand text-white font-semibold px-5 py-3 rounded-xl shadow-soft">Ver más en TikTok</a>
+      </div>
     </div>
   </section>
 
@@ -324,6 +326,9 @@
         <a href="https://wa.me/523329231790?text=Hola%20Marcos%20Vallarta,%20quiero%20una%20cotizaci%C3%B3n" class="btn-brand text-white font-semibold px-6 py-3 rounded-xl shadow-soft inline-block">Cotizar por WhatsApp</a>
         <a href="https://www.google.com/maps?q=Homero+45,+Vallarta+San+Jorge,+Guadalajara" target="_blank" rel="noopener" class="px-5 py-3 rounded-xl border border-neutral-300 hover:border-neutral-400 inline-block">Cómo llegar</a>
         <a href="https://javt2bill.github.io/cotizador-marcos-vallarta/" target="_blank" rel="noopener" class="px-5 py-3 rounded-xl border border-brand-500 text-brand-600 hover:bg-brand-50 inline-block">Simulador</a>
+        <!-- Redes también en footer -->
+        <a href="https://www.facebook.com/profile.php?id=100064111207075" target="_blank" rel="noopener" class="px-5 py-3 rounded-xl border border-neutral-300 hover:border-neutral-400 inline-block">Facebook</a>
+        <a href="https://www.tiktok.com/@marcosvallarta1" target="_blank" rel="noopener" class="btn-brand text-white font-semibold px-6 py-3 rounded-xl shadow-soft inline-block">TikTok</a>
       </div>
     </div>
     <div class="max-w-6xl mx-auto px-6 mt-8 text-sm text-neutral-500">© <span id="y"></span> Marcos Vallarta. Todos los derechos reservados.</div>
@@ -367,7 +372,6 @@
 
     // --------- Catálogo: cargar fotos automáticamente desde la carpeta DUPLICADA ---------
     (async function(){
-      // Ajustado a tu repo y ruta actual (doble "assets")
       const USER   = 'JavT2Bill';
       const REPO   = 'marcos-vallarta-site';
       const BRANCH = 'main';
