@@ -194,4 +194,295 @@
         <button class="chip" data-filter="Negro">Negro</button>
         <button class="chip" data-filter="Blanco">Blanco</button>
         <button class="chip" data-filter="Vintage">Vintage</button>
-        <button class="chip" data-filter="Minimalista
+        <button class="chip" data-filter="Minimalista">Minimalista</button>
+      </div>
+
+      <!-- Grid catálogo -->
+      <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6" id="grid-catalogo" aria-live="polite">
+        <!-- Fallback inicial (se reemplaza si existe assets/catalogo-molduras.json) -->
+        <figure class="bg-white rounded-2xl border border-neutral-200 p-2 shadow-soft cursor-zoom-in wm" data-estilo="Madera" data-full="./assets/gal-2.jpg" data-caption="Madera natural">
+          <img class="h-48 w-full object-cover rounded-xl" src="./assets/gal-2.jpg" alt="Moldura estilo madera natural">
+          <figcaption class="mt-3 text-neutral-700">Madera natural</figcaption>
+        </figure>
+        <figure class="bg-white rounded-2xl border border-neutral-200 p-2 shadow-soft cursor-zoom-in wm" data-estilo="Metálico" data-full="./assets/gal-4.jpg" data-caption="Metálico dorado">
+          <img class="h-48 w-full object-cover rounded-xl" src="./assets/gal-4.jpg" alt="Moldura metálica dorada">
+          <figcaption class="mt-3 text-neutral-700">Metálico dorado</figcaption>
+        </figure>
+        <figure class="bg-white rounded-2xl border border-neutral-200 p-2 shadow-soft cursor-zoom-in wm" data-estilo="Negro" data-full="./assets/gal-1.jpg" data-caption="Negro mate minimalista">
+          <img class="h-48 w-full object-cover rounded-xl" src="./assets/gal-1.jpg" alt="Moldura negra minimalista">
+          <figcaption class="mt-3 text-neutral-700">Negro mate</figcaption>
+        </figure>
+        <figure class="bg-white rounded-2xl border border-neutral-200 p-2 shadow-soft cursor-zoom-in wm" data-estilo="Blanco" data-full="./assets/gal-5.jpg" data-caption="Blanco/Marfil texturizado">
+          <img class="h-48 w-full object-cover rounded-xl" src="./assets/gal-5.jpg" alt="Moldura blanca texturizada">
+          <figcaption class="mt-3 text-neutral-700">Blanco / Marfil</figcaption>
+        </figure>
+        <figure class="bg-white rounded-2xl border border-neutral-200 p-2 shadow-soft cursor-zoom-in wm" data-estilo="Vintage" data-full="./assets/gal-7.jpg" data-caption="Vintage / Decapé">
+          <img class="h-48 w-full object-cover rounded-xl" src="./assets/gal-7.jpg" alt="Moldura vintage decapé">
+          <figcaption class="mt-3 text-neutral-700">Vintage / Decapé</figcaption>
+        </figure>
+        <figure class="bg-white rounded-2xl border border-neutral-200 p-2 shadow-soft cursor-zoom-in wm" data-estilo="Minimalista" data-full="./assets/gal-8.jpg" data-caption="Perfil delgado minimalista">
+          <img class="h-48 w-full object-cover rounded-xl" src="./assets/gal-8.jpg" alt="Moldura minimalista delgada">
+          <figcaption class="mt-3 text-neutral-700">Minimalista</figcaption>
+        </figure>
+      </div>
+
+      <p class="mt-3 text-xs text-neutral-500">¿Te gusta algún estilo? Envíanos un WhatsApp y te proponemos combinaciones.</p>
+    </div>
+  </section>
+
+  <!-- Selector de Molduras -->
+  <section id="selector" class="py-20">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="md:flex items-end justify-between gap-8">
+        <h2 class="font-serif text-3xl md:text-4xl">Elige tu combinación</h2>
+        <p class="max-w-2xl text-neutral-700">Selecciona material, ancho, acabado y uso. El mensaje en WhatsApp se llenará automáticamente.</p>
+      </div>
+
+      <div class="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4">
+        <select id="selMaterial" class="w-full border border-neutral-300 rounded-xl px-4 py-3 bg-white">
+          <option>Poliestireno</option>
+          <option>Madera</option>
+          <option>MDF</option>
+        </select>
+        <select id="selAncho" class="w-full border border-neutral-300 rounded-xl px-4 py-3 bg-white">
+          <option>Delgado</option>
+          <option>Medio</option>
+          <option>Ancho</option>
+        </select>
+        <select id="selAcabado" class="w-full border border-neutral-300 rounded-xl px-4 py-3 bg-white">
+          <option>Mate</option>
+          <option>Brillo</option>
+          <option>Madera natural</option>
+          <option>Metalizado</option>
+        </select>
+        <select id="selUso" class="w-full border border-neutral-300 rounded-xl px-4 py-3 bg-white">
+          <option>Diploma</option>
+          <option>Jersey</option>
+          <option>Óleo/Acrílico</option>
+          <option>Fotografía</option>
+        </select>
+      </div>
+
+      <div class="mt-6 flex flex-wrap gap-4 items-center">
+        <a id="btnCotizar" href="https://wa.me/523329231790?text=Hola%20Marcos%20Vallarta,%20quiero%20cotizar%20un%20marco" class="btn-brand text-white font-semibold px-6 py-3 rounded-xl shadow-soft focus-ring">Cotizar esta combinación</a>
+        <a href="https://javt2bill.github.io/cotizador-marcos-vallarta/" target="_blank" rel="noopener" class="px-5 py-3 rounded-xl border border-brand-500 text-brand-600 hover:bg-brand-50">Abrir simulador</a>
+      </div>
+      <p class="mt-2 text-sm text-neutral-600">* Si tienes un modelo específico, compártenos su nombre o una foto en el chat.</p>
+    </div>
+  </section>
+
+  <!-- Portafolio (6 piezas + Lightbox) -->
+  <section id="portafolio" class="py-20 bg-neutral-50 border-t border-neutral-200">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="flex items-end justify-between">
+        <h2 class="font-serif text-3xl md:text-4xl">Portafolio</h2>
+        <a href="https://wa.me/523329231790?text=Hola%20Marcos%20Vallarta,%20tengo%20una%20pieza%20especial%20para%20cotizar" class="text-brand-600 hover:underline text-sm md:text-base">¿Tienes una pieza especial? Cotiza aquí →</a>
+      </div>
+
+      <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6" id="grid-portafolio">
+        <figure class="bg-white rounded-2xl border border-neutral-200 p-2 shadow-soft cursor-zoom-in">
+          <img class="h-48 w-full object-cover rounded-xl" src="./assets/gal-5.jpg" alt="Ciudad abstracta con filete metálico">
+          <figcaption class="mt-3 text-neutral-700">Ciudad abstracta con filete metálico</figcaption>
+        </figure>
+        <figure class="bg-white rounded-2xl border border-neutral-200 p-2 shadow-soft cursor-zoom-in">
+          <img class="h-48 w-full object-cover rounded-xl" src="./assets/gal-7.jpg" alt="Gran formato con marco dorado">
+          <figcaption class="mt-3 text-neutral-700">Gran formato con marco dorado</figcaption>
+        </figure>
+        <figure class="bg-white rounded-2xl border border-neutral-200 p-2 shadow-soft cursor-zoom-in">
+          <img class="h-48 w-full object-cover rounded-xl" src="./assets/gal-8.jpg" alt="Restauración y enmarcado de óleo">
+          <figcaption class="mt-3 text-neutral-700">Restauración y enmarcado de óleo</figcaption>
+        </figure>
+        <figure class="bg-white rounded-2xl border border-neutral-200 p-2 shadow-soft cursor-zoom-in">
+          <img class="h-48 w-full object-cover rounded-xl" src="./assets/gal-2.jpg" alt="Marco de madera con marialuisa">
+          <figcaption class="mt-3 text-neutral-700">Marco de madera con marialuisa</figcaption>
+        </figure>
+        <figure class="bg-white rounded-2xl border border-neutral-200 p-2 shadow-soft cursor-zoom-in">
+          <img class="h-48 w-full object-cover rounded-xl" src="./assets/gal-4.jpg" alt="Arte contemporáneo con filete dorado">
+          <figcaption class="mt-3 text-neutral-700">Arte contemporáneo con filete dorado</figcaption>
+        </figure>
+        <figure class="bg-white rounded-2xl border border-neutral-200 p-2 shadow-soft cursor-zoom-in">
+          <img class="h-48 w-full object-cover rounded-xl" src="./assets/gal-1.jpg" alt="Paspartú blanco y perfil negro">
+          <figcaption class="mt-3 text-neutral-700">Paspartú blanco y perfil negro</figcaption>
+        </figure>
+      </div>
+
+      <div class="mt-10 flex flex-wrap gap-4">
+        <a href="https://www.facebook.com/profile.php?id=100064111207075" target="_blank" rel="noopener" class="px-5 py-3 rounded-xl border border-neutral-300 hover:border-neutral-400">Ver más trabajos en Facebook</a>
+        <a href="https://www.tiktok.com/@marcosvallarta1" target="_blank" rel="noopener" class="btn-brand text-white font-semibold px-5 py-3 rounded-xl shadow-soft">Ver más en TikTok</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Proceso -->
+  <section id="proceso" class="py-20">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="font-serif text-3xl md:text-4xl">Nuestro proceso</h2>
+      <div class="grid md:grid-cols-3 gap-6 mt-10">
+        <div class="bg-white border border-neutral-200 rounded-2xl p-6">
+          <h3 class="font-semibold">1. Diagnóstico y propuesta</h3>
+          <p class="mt-2 text-neutral-700">Vemos tu pieza, proponemos moldura, paspartú y protección adecuada.</p>
+        </div>
+        <div class="bg-white border border-neutral-200 rounded-2xl p-6">
+          <h3 class="font-semibold">2. Producción cuidada</h3>
+          <p class="mt-2 text-neutral-700">Corte y armado profesional; conservación y materiales libres de ácido.</p>
+        </div>
+        <div class="bg-white border border-neutral-200 rounded-2xl p-6">
+          <h3 class="font-semibold">3. Entrega y montaje</h3>
+          <p class="mt-2 text-neutral-700">Revisión contigo y montaje listo para colgar.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Opiniones -->
+  <section id="opiniones" class="py-20 bg-neutral-50 border-y border-neutral-200">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="font-serif text-3xl md:text-4xl">Opiniones</h2>
+      <div class="mt-8 grid md:grid-cols-3 gap-6">
+        <blockquote class="bg-white border border-neutral-200 rounded-2xl p-6 shadow-soft">
+          <p class="text-neutral-800">“Excelente trabajo y trato. Mi jersey quedó increíble.”</p>
+          <footer class="mt-3 text-sm text-neutral-600">Cliente verificado</footer>
+        </blockquote>
+        <blockquote class="bg-white border border-neutral-200 rounded-2xl p-6 shadow-soft">
+          <p class="text-neutral-800">“Propuestas muy finas y materiales de primera.”</p>
+          <footer class="mt-3 text-sm text-neutral-600">Cliente verificado</footer>
+        </blockquote>
+        <blockquote class="bg-white border border-neutral-200 rounded-2xl p-6 shadow-soft">
+          <p class="text-neutral-800">“Cuidaron mi obra como si fuera suya. ¡Gracias!”</p>
+          <footer class="mt-3 text-sm text-neutral-600">Cliente verificado</footer>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-12">
+    <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-6 items-center">
+      <div>
+        <h3 class="font-serif text-2xl">Marcos <span class="text-brand-600">Vallarta</span></h3>
+        <p class="text-neutral-700 mt-2">Homero 45, Vallarta San Jorge, Guadalajara<br>Atención por WhatsApp y en taller.</p>
+      </div>
+      <div class="md:text-right space-x-3">
+        <a href="https://wa.me/523329231790?text=Hola%20Marcos%20Vallarta,%20quiero%20una%20cotizaci%C3%B3n" class="btn-brand text-white font-semibold px-6 py-3 rounded-xl shadow-soft inline-block">Cotizar por WhatsApp</a>
+        <a href="https://www.google.com/maps?q=Homero+45,+Vallarta+San+Jorge,+Guadalajara" target="_blank" rel="noopener" class="px-5 py-3 rounded-xl border border-neutral-300 hover:border-neutral-400 inline-block">Cómo llegar</a>
+        <a href="https://javt2bill.github.io/cotizador-marcos-vallarta/" target="_blank" rel="noopener" class="px-5 py-3 rounded-xl border border-brand-500 text-brand-600 hover:bg-brand-50 inline-block">Simulador</a>
+      </div>
+    </div>
+    <div class="max-w-6xl mx-auto px-6 mt-8 text-sm text-neutral-500">© <span id="y"></span> Marcos Vallarta. Todos los derechos reservados.</div>
+  </footer>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lb-backdrop" aria-hidden="true">
+    <button class="lb-close" id="lbClose" aria-label="Cerrar (Esc)">Cerrar ✕</button>
+    <div class="text-center">
+      <img id="lbImg" class="lb-img" alt="">
+      <div id="lbCap" class="lb-caption"></div>
+    </div>
+  </div>
+
+  <script>
+    // WhatsApp auto-fill (selector)
+    (function(){
+      const phone = '523329231790';
+      const base = `https://wa.me/${phone}?text=`;
+      function update(){
+        const m  = document.getElementById('selMaterial').value;
+        const a  = document.getElementById('selAncho').value;
+        const ac = document.getElementById('selAcabado').value;
+        const u  = document.getElementById('selUso').value;
+        const msg = `Hola Marcos Vallarta, quiero cotizar un marco. Material: ${m}; Ancho: ${a}; Acabado: ${ac}; Uso: ${u}. ¿Sugerencias y tiempos de entrega?`;
+        document.getElementById('btnCotizar').setAttribute('href', base + encodeURIComponent(msg));
+      }
+      ['selMaterial','selAncho','selAcabado','selUso'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.addEventListener('change', update);
+      });
+      update();
+      document.getElementById('y').textContent = new Date().getFullYear();
+    })();
+
+    // Carga catálogo desde JSON si existe (assets/catalogo-molduras.json)
+    (async function(){
+      const grid = document.getElementById('grid-catalogo');
+      try{
+        const res = await fetch('./assets/catalogo-molduras.json', {cache:'no-store'});
+        if(!res.ok) return; // usar fallback
+        const data = await res.json();
+        if(!Array.isArray(data) || !data.length) return;
+
+        grid.innerHTML = ''; // reemplaza fallback
+        for(const item of data){
+          const fig = document.createElement('figure');
+          fig.className = 'bg-white rounded-2xl border border-neutral-200 p-2 shadow-soft cursor-zoom-in wm';
+          fig.dataset.estilo = item.estilo || 'Sin estilo';
+          fig.setAttribute('data-full', item.src);
+          fig.setAttribute('data-caption', item.alt || item.estilo || '');
+
+          fig.innerHTML = `
+            <img class="h-48 w-full object-cover rounded-xl" src="${item.src}" alt="${item.alt || item.estilo || 'Moldura'}">
+            <figcaption class="mt-3 text-neutral-700">${item.estilo || 'Moldura'}</figcaption>
+          `;
+          grid.appendChild(fig);
+        }
+      }catch(e){ /* fallback silencioso */ }
+    })();
+
+    // Filtros por estilo
+    (function(){
+      const chips = document.querySelectorAll('#filtros .chip');
+      const grid = document.getElementById('grid-catalogo');
+      function apply(filter){
+        [...grid.children].forEach(fig=>{
+          const ok = (filter==='Todos') || (fig.dataset.estilo===filter);
+          fig.style.display = ok ? '' : 'none';
+        });
+      }
+      chips.forEach(ch=>{
+        ch.addEventListener('click', ()=>{
+          chips.forEach(c=>c.dataset.active='false');
+          ch.dataset.active='true';
+          apply(ch.dataset.filter);
+        });
+      });
+    })();
+
+    // Lightbox (portafolio + catálogo)
+    (function(){
+      const lb = document.getElementById('lightbox');
+      const lbImg = document.getElementById('lbImg');
+      const lbCap = document.getElementById('lbCap');
+      const lbClose = document.getElementById('lbClose');
+
+      function openLB(src, cap, alt){
+        lbImg.src = src; lbImg.alt = alt || cap || '';
+        lbCap.textContent = cap || '';
+        lb.classList.add('open'); lb.setAttribute('aria-hidden','false');
+      }
+      function closeLB(){
+        lb.classList.remove('open'); lb.setAttribute('aria-hidden','true'); lbImg.src = '';
+      }
+      function bindGrid(gridId){
+        const grid = document.getElementById(gridId);
+        if(!grid) return;
+        grid.addEventListener('click', (e)=>{
+          const fig = e.target.closest('figure');
+          if(!fig) return;
+          const src = fig.getAttribute('data-full') || fig.querySelector('img')?.src;
+          const cap = fig.getAttribute('data-caption') || fig.querySelector('figcaption')?.textContent?.trim();
+          const alt = fig.querySelector('img')?.alt;
+          if(src) openLB(src, cap, alt);
+        });
+      }
+      bindGrid('grid-portafolio');
+      bindGrid('grid-catalogo');
+
+      lb.addEventListener('click', (e)=>{
+        if(e.target === lb || e.target === lbClose) closeLB();
+      });
+      window.addEventListener('keydown', (e)=>{
+        if(e.key === 'Escape') closeLB();
+      });
+    })();
+  </script>
+</body>
+</html>
