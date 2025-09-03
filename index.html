@@ -320,13 +320,13 @@
     // WhatsApp auto-fill (selector)
     (function(){
       const phone = '523329231790';
-      const base = `https://wa.me/${phone}?text=`;
+      const base = https://wa.me/${phone}?text=;
       function update(){
         const m  = document.getElementById('selMaterial').value;
         const a  = document.getElementById('selAncho').value;
         const ac = document.getElementById('selAcabado').value;
         const u  = document.getElementById('selUso').value;
-        const msg = `Hola Marcos Vallarta, quiero cotizar un marco. Material: ${m}; Ancho: ${a}; Acabado: ${ac}; Uso: ${u}. ¿Sugerencias y tiempos de entrega?`;
+        const msg = Hola Marcos Vallarta, quiero cotizar un marco. Material: ${m}; Ancho: ${a}; Acabado: ${ac}; Uso: ${u}. ¿Sugerencias y tiempos de entrega?;
         document.getElementById('btnCotizar').setAttribute('href', base + encodeURIComponent(msg));
       }
       ['selMaterial','selAncho','selAcabado','selUso'].forEach(id => document.getElementById(id).addEventListener('change', update));
