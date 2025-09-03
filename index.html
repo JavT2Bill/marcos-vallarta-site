@@ -42,25 +42,17 @@
     .btn-brand{background:linear-gradient(135deg,#2FCAD2,#28B8C0 45%,#1FA2A9)}
     .focus-ring:focus{outline:3px solid #28B8C0;outline-offset:2px}
     .hero-overlay{background:linear-gradient(180deg,rgba(255,255,255,.92),rgba(255,255,255,.70) 35%,rgba(255,255,255,0) 75%); pointer-events:none;}
-
-    /* Chips */
+    /* Chips de filtro */
     .chip{border:1px solid #dfe6ea;border-radius:999px;padding:.5rem .9rem;cursor:pointer;user-select:none}
     .chip[data-active="true"]{background:#E6FAFB;border-color:#28B8C0;color:#0b3a3d;font-weight:600}
-
     /* Lightbox */
     .lb-backdrop{display:none;position:fixed;inset:0;background:rgba(0,0,0,.8);z-index:80;align-items:center;justify-content:center;padding:24px}
     .lb-backdrop.open{display:flex}
     .lb-img{max-width:min(1400px,96vw);max-height:92vh;border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,.5)}
     .lb-caption{color:#fff;margin-top:12px;text-align:center;max-width:min(1200px,96vw)}
     .lb-close{position:absolute;top:14px;right:14px;background:#ffffff1a;border:1px solid #ffffff33;color:#fff;border-radius:10px;padding:8px 12px}
-
-    /* Watermark con logo (aplicar en los <figure> con clase .wm) */
-    figure.wm{position:relative}
-    figure.wm::after{
-      content:""; position:absolute; right:8px; bottom:8px; width:120px; height:28px;
-      background:url('./assets/logo-mv.png') no-repeat center / contain; opacity:.6; pointer-events:none;
-      filter: drop-shadow(0 1px 2px rgba(0,0,0,.25));
-    }
+    /* Badge de clave */
+    .badge-clave{position:absolute;top:10px;left:10px;background:#ffffffcc;color:#0b3a3d;border:1px solid #e6eef1;padding:4px 10px;border-radius:999px;font-size:.80rem;font-weight:600;backdrop-filter: blur(6px)}
   </style>
 </head>
 
@@ -175,13 +167,13 @@
     </div>
   </section>
 
-  <!-- Catálogo de Molduras por Estilos -->
+  <!-- Catálogo -->
   <section id="catalogo" class="py-20">
     <div class="max-w-6xl mx-auto px-6">
       <div class="md:flex items-end justify-between gap-8">
         <div>
-          <h2 class="font-serif text-3xl md:text-4xl">Catálogo de molduras (por estilo)</h2>
-          <p class="mt-2 text-neutral-700">Explora estilos sin códigos: elige por estética y combínalo con tu pieza. <span class="text-neutral-500 text-sm">*Imágenes referenciales del proveedor.</span></p>
+          <h2 class="font-serif text-3xl md:text-4xl">Catálogo de molduras</h2>
+          <p class="mt-2 text-neutral-700">Explora por estilo y revisa la <strong>clave</strong> para compartirla por WhatsApp.</p>
         </div>
         <a href="https://javt2bill.github.io/cotizador-marcos-vallarta/" target="_blank" rel="noopener" class="hidden md:inline-block btn-brand text-white font-semibold px-5 py-3 rounded-xl shadow-soft">Abrir simulador</a>
       </div>
@@ -197,40 +189,31 @@
         <button class="chip" data-filter="Minimalista">Minimalista</button>
       </div>
 
-      <!-- Grid catálogo -->
+      <!-- Grid -->
       <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6" id="grid-catalogo" aria-live="polite">
-        <!-- Fallback inicial (se reemplaza si existe assets/catalogo-molduras.json) -->
-        <figure class="bg-white rounded-2xl border border-neutral-200 p-2 shadow-soft cursor-zoom-in wm" data-estilo="Madera" data-full="./assets/gal-2.jpg" data-caption="Madera natural">
-          <img class="h-48 w-full object-cover rounded-xl" src="./assets/gal-2.jpg" alt="Moldura estilo madera natural">
-          <figcaption class="mt-3 text-neutral-700">Madera natural</figcaption>
+        <!-- Fallbacks (se reemplazan al cargar el JSON) -->
+        <figure class="relative bg-white rounded-2xl border border-neutral-200 p-2 shadow-soft cursor-zoom-in" data-estilo="Madera" data-full="./assets/gal-2.jpg" data-caption="Clave: F000 • Estilo: Madera">
+          <span class="badge-clave">Clave: F000</span>
+          <img class="h-48 w-full object-contain bg-neutral-100 rounded-xl" src="./assets/gal-2.jpg" alt="Moldura Madera">
+          <figcaption class="mt-3 text-neutral-700"><span class="text-neutral-500">Estilo:</span> Madera</figcaption>
         </figure>
-        <figure class="bg-white rounded-2xl border border-neutral-200 p-2 shadow-soft cursor-zoom-in wm" data-estilo="Metálico" data-full="./assets/gal-4.jpg" data-caption="Metálico dorado">
-          <img class="h-48 w-full object-cover rounded-xl" src="./assets/gal-4.jpg" alt="Moldura metálica dorada">
-          <figcaption class="mt-3 text-neutral-700">Metálico dorado</figcaption>
+        <figure class="relative bg-white rounded-2xl border border-neutral-200 p-2 shadow-soft cursor-zoom-in" data-estilo="Metálico" data-full="./assets/gal-4.jpg" data-caption="Clave: F000 • Estilo: Metálico">
+          <span class="badge-clave">Clave: F000</span>
+          <img class="h-48 w-full object-contain bg-neutral-100 rounded-xl" src="./assets/gal-4.jpg" alt="Moldura Metálico">
+          <figcaption class="mt-3 text-neutral-700"><span class="text-neutral-500">Estilo:</span> Metálico</figcaption>
         </figure>
-        <figure class="bg-white rounded-2xl border border-neutral-200 p-2 shadow-soft cursor-zoom-in wm" data-estilo="Negro" data-full="./assets/gal-1.jpg" data-caption="Negro mate minimalista">
-          <img class="h-48 w-full object-cover rounded-xl" src="./assets/gal-1.jpg" alt="Moldura negra minimalista">
-          <figcaption class="mt-3 text-neutral-700">Negro mate</figcaption>
-        </figure>
-        <figure class="bg-white rounded-2xl border border-neutral-200 p-2 shadow-soft cursor-zoom-in wm" data-estilo="Blanco" data-full="./assets/gal-5.jpg" data-caption="Blanco/Marfil texturizado">
-          <img class="h-48 w-full object-cover rounded-xl" src="./assets/gal-5.jpg" alt="Moldura blanca texturizada">
-          <figcaption class="mt-3 text-neutral-700">Blanco / Marfil</figcaption>
-        </figure>
-        <figure class="bg-white rounded-2xl border border-neutral-200 p-2 shadow-soft cursor-zoom-in wm" data-estilo="Vintage" data-full="./assets/gal-7.jpg" data-caption="Vintage / Decapé">
-          <img class="h-48 w-full object-cover rounded-xl" src="./assets/gal-7.jpg" alt="Moldura vintage decapé">
-          <figcaption class="mt-3 text-neutral-700">Vintage / Decapé</figcaption>
-        </figure>
-        <figure class="bg-white rounded-2xl border border-neutral-200 p-2 shadow-soft cursor-zoom-in wm" data-estilo="Minimalista" data-full="./assets/gal-8.jpg" data-caption="Perfil delgado minimalista">
-          <img class="h-48 w-full object-cover rounded-xl" src="./assets/gal-8.jpg" alt="Moldura minimalista delgada">
-          <figcaption class="mt-3 text-neutral-700">Minimalista</figcaption>
+        <figure class="relative bg-white rounded-2xl border border-neutral-200 p-2 shadow-soft cursor-zoom-in" data-estilo="Negro" data-full="./assets/gal-1.jpg" data-caption="Clave: F000 • Estilo: Negro">
+          <span class="badge-clave">Clave: F000</span>
+          <img class="h-48 w-full object-contain bg-neutral-100 rounded-xl" src="./assets/gal-1.jpg" alt="Moldura Negro">
+          <figcaption class="mt-3 text-neutral-700"><span class="text-neutral-500">Estilo:</span> Negro</figcaption>
         </figure>
       </div>
 
-      <p class="mt-3 text-xs text-neutral-500">¿Te gusta algún estilo? Envíanos un WhatsApp y te proponemos combinaciones.</p>
+      <p class="mt-3 text-sm text-neutral-600">¿Ya tienes una clave? Escríbenos la clave por WhatsApp y te proponemos combinaciones.</p>
     </div>
   </section>
 
-  <!-- Selector de Molduras -->
+  <!-- Selector -->
   <section id="selector" class="py-20">
     <div class="max-w-6xl mx-auto px-6">
       <div class="md:flex items-end justify-between gap-8">
@@ -271,7 +254,7 @@
     </div>
   </section>
 
-  <!-- Portafolio (6 piezas + Lightbox) -->
+  <!-- Portafolio -->
   <section id="portafolio" class="py-20 bg-neutral-50 border-t border-neutral-200">
     <div class="max-w-6xl mx-auto px-6">
       <div class="flex items-end justify-between">
@@ -292,44 +275,6 @@
           <img class="h-48 w-full object-cover rounded-xl" src="./assets/gal-8.jpg" alt="Restauración y enmarcado de óleo">
           <figcaption class="mt-3 text-neutral-700">Restauración y enmarcado de óleo</figcaption>
         </figure>
-        <figure class="bg-white rounded-2xl border border-neutral-200 p-2 shadow-soft cursor-zoom-in">
-          <img class="h-48 w-full object-cover rounded-xl" src="./assets/gal-2.jpg" alt="Marco de madera con marialuisa">
-          <figcaption class="mt-3 text-neutral-700">Marco de madera con marialuisa</figcaption>
-        </figure>
-        <figure class="bg-white rounded-2xl border border-neutral-200 p-2 shadow-soft cursor-zoom-in">
-          <img class="h-48 w-full object-cover rounded-xl" src="./assets/gal-4.jpg" alt="Arte contemporáneo con filete dorado">
-          <figcaption class="mt-3 text-neutral-700">Arte contemporáneo con filete dorado</figcaption>
-        </figure>
-        <figure class="bg-white rounded-2xl border border-neutral-200 p-2 shadow-soft cursor-zoom-in">
-          <img class="h-48 w-full object-cover rounded-xl" src="./assets/gal-1.jpg" alt="Paspartú blanco y perfil negro">
-          <figcaption class="mt-3 text-neutral-700">Paspartú blanco y perfil negro</figcaption>
-        </figure>
-      </div>
-
-      <div class="mt-10 flex flex-wrap gap-4">
-        <a href="https://www.facebook.com/profile.php?id=100064111207075" target="_blank" rel="noopener" class="px-5 py-3 rounded-xl border border-neutral-300 hover:border-neutral-400">Ver más trabajos en Facebook</a>
-        <a href="https://www.tiktok.com/@marcosvallarta1" target="_blank" rel="noopener" class="btn-brand text-white font-semibold px-5 py-3 rounded-xl shadow-soft">Ver más en TikTok</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Proceso -->
-  <section id="proceso" class="py-20">
-    <div class="max-w-6xl mx-auto px-6">
-      <h2 class="font-serif text-3xl md:text-4xl">Nuestro proceso</h2>
-      <div class="grid md:grid-cols-3 gap-6 mt-10">
-        <div class="bg-white border border-neutral-200 rounded-2xl p-6">
-          <h3 class="font-semibold">1. Diagnóstico y propuesta</h3>
-          <p class="mt-2 text-neutral-700">Vemos tu pieza, proponemos moldura, paspartú y protección adecuada.</p>
-        </div>
-        <div class="bg-white border border-neutral-200 rounded-2xl p-6">
-          <h3 class="font-semibold">2. Producción cuidada</h3>
-          <p class="mt-2 text-neutral-700">Corte y armado profesional; conservación y materiales libres de ácido.</p>
-        </div>
-        <div class="bg-white border border-neutral-200 rounded-2xl p-6">
-          <h3 class="font-semibold">3. Entrega y montaje</h3>
-          <p class="mt-2 text-neutral-700">Revisión contigo y montaje listo para colgar.</p>
-        </div>
       </div>
     </div>
   </section>
@@ -381,46 +326,55 @@
   </div>
 
   <script>
+    // Año
+    document.addEventListener('DOMContentLoaded', ()=> {
+      const y = document.getElementById('y');
+      if (y) y.textContent = new Date().getFullYear();
+    });
+
     // WhatsApp auto-fill (selector)
     (function(){
       const phone = '523329231790';
       const base = `https://wa.me/${phone}?text=`;
       function update(){
-        const m  = document.getElementById('selMaterial').value;
-        const a  = document.getElementById('selAncho').value;
-        const ac = document.getElementById('selAcabado').value;
-        const u  = document.getElementById('selUso').value;
+        const m  = document.getElementById('selMaterial')?.value || '';
+        const a  = document.getElementById('selAncho')?.value || '';
+        const ac = document.getElementById('selAcabado')?.value || '';
+        const u  = document.getElementById('selUso')?.value || '';
         const msg = `Hola Marcos Vallarta, quiero cotizar un marco. Material: ${m}; Ancho: ${a}; Acabado: ${ac}; Uso: ${u}. ¿Sugerencias y tiempos de entrega?`;
-        document.getElementById('btnCotizar').setAttribute('href', base + encodeURIComponent(msg));
+        const btn = document.getElementById('btnCotizar');
+        if (btn) btn.setAttribute('href', base + encodeURIComponent(msg));
       }
       ['selMaterial','selAncho','selAcabado','selUso'].forEach(id => {
         const el = document.getElementById(id);
         if (el) el.addEventListener('change', update);
       });
       update();
-      document.getElementById('y').textContent = new Date().getFullYear();
     })();
 
-    // Carga catálogo desde JSON si existe (assets/catalogo-molduras.json)
+    // Carga catálogo con clave visible (lee assets/catalogo-molduras.json)
     (async function(){
       const grid = document.getElementById('grid-catalogo');
       try{
         const res = await fetch('./assets/catalogo-molduras.json', {cache:'no-store'});
-        if(!res.ok) return; // usar fallback
+        if(!res.ok) return;
         const data = await res.json();
         if(!Array.isArray(data) || !data.length) return;
 
-        grid.innerHTML = ''; // reemplaza fallback
+        grid.innerHTML = '';
         for(const item of data){
           const fig = document.createElement('figure');
-          fig.className = 'bg-white rounded-2xl border border-neutral-200 p-2 shadow-soft cursor-zoom-in wm';
+          fig.className = 'relative bg-white rounded-2xl border border-neutral-200 p-2 shadow-soft cursor-zoom-in';
           fig.dataset.estilo = item.estilo || 'Sin estilo';
           fig.setAttribute('data-full', item.src);
-          fig.setAttribute('data-caption', item.alt || item.estilo || '');
+          const claveTxt = item.clave ? `Clave: ${item.clave}` : 'Clave: —';
+          const capTxt = `${claveTxt} • Estilo: ${item.estilo || '—'}`;
+          fig.setAttribute('data-caption', capTxt);
 
           fig.innerHTML = `
-            <img class="h-48 w-full object-cover rounded-xl" src="${item.src}" alt="${item.alt || item.estilo || 'Moldura'}">
-            <figcaption class="mt-3 text-neutral-700">${item.estilo || 'Moldura'}</figcaption>
+            <span class="badge-clave">${claveTxt}</span>
+            <img class="h-48 w-full object-contain bg-neutral-100 rounded-xl" src="${item.src}" alt="${item.alt || ('Moldura ' + (item.clave||''))}">
+            <figcaption class="mt-3 text-neutral-700"><span class="text-neutral-500">Estilo:</span> ${item.estilo || '—'}</figcaption>
           `;
           grid.appendChild(fig);
         }
