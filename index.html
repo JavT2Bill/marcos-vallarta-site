@@ -44,8 +44,8 @@
     /* Lightbox */
     .lb-backdrop{display:none;position:fixed;inset:0;background:rgba(0,0,0,.8);z-index:80;align-items:center;justify-content:center;padding:24px}
     .lb-backdrop.open{display:flex}
-    .lb-img{max-width:min(1100px,92vw);max-height:86vh;border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,.5)}
-    .lb-caption{color:#fff;margin-top:12px;text-align:center;max-width:min(1000px,92vw)}
+    .lb-img{max-width:min(1400px,96vw);max-height:92vh;border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+    .lb-caption{color:#fff;margin-top:12px;text-align:center;max-width:min(1200px,96vw)}
     .lb-close{position:absolute;top:14px;right:14px;background:#ffffff1a;border:1px solid #ffffff33;color:#fff;border-radius:10px;padding:8px 12px}
   </style>
 </head>
@@ -66,8 +66,9 @@
   <header class="sticky top-0 z-40 bg-white/70 backdrop-blur border-b border-neutral-200">
     <div class="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between gap-6">
       <a href="#" class="flex items-center gap-3">
-        <img src="./assets/logo-mv.png" alt="Marcos Vallarta" class="h-8 w-auto">
-        <span class="font-serif text-2xl">Marcos <span class="text-brand-500">Vallarta</span></span>
+        <!-- LOGO más grande -->
+        <img src="./assets/logo-mv.png" alt="Marcos Vallarta" class="h-12 md:h-14 w-auto">
+        <span class="font-serif text-2xl md:text-3xl">Marcos <span class="text-brand-500">Vallarta</span></span>
       </a>
       <nav class="hidden md:flex items-center gap-8 text-lg">
         <a href="#servicios" class="hover:text-brand-600">Servicios</a>
@@ -87,9 +88,11 @@
     <div class="max-w-6xl mx-auto px-6 py-10 md:py-16">
       <h1 class="font-serif text-4xl md:text-6xl leading-tight">Enmarcaciones a la medida<br class="hidden md:block"> con <span class="text-brand-600">acabado de galería</span></h1>
       <p class="mt-4 max-w-2xl text-lg text-neutral-700">Pinturas, diplomas, camisetas deportivas y recuerdos que merecen un marco perfecto. Conservación profesional y asesoría personalizada.</p>
-      <div class="mt-6 flex gap-4">
+      <div class="mt-6 flex flex-wrap gap-4">
         <a href="#servicios" class="px-5 py-3 rounded-xl border border-neutral-300 hover:border-neutral-400 focus-ring">Ver servicios</a>
         <a href="https://wa.me/523329231790?text=Hola%20Marcos%20Vallarta,%20quiero%20una%20cotizaci%C3%B3n" class="btn-brand text-white font-semibold px-5 py-3 rounded-xl shadow-soft">Escríbenos por WhatsApp</a>
+        <!-- Botón Cómo llegar -->
+        <a href="https://www.google.com/maps?q=Homero+45,+Vallarta+San+Jorge,+Guadalajara" target="_blank" rel="noopener" class="px-5 py-3 rounded-xl border border-neutral-300 hover:border-neutral-400 focus-ring">Cómo llegar</a>
       </div>
     </div>
   </section>
@@ -300,8 +303,10 @@
         <h3 class="font-serif text-2xl">Marcos <span class="text-brand-600">Vallarta</span></h3>
         <p class="text-neutral-700 mt-2">Homero 45, Vallarta San Jorge, Guadalajara<br>Atención por WhatsApp y en taller.</p>
       </div>
-      <div class="md:text-right">
+      <div class="md:text-right space-x-3">
         <a href="https://wa.me/523329231790?text=Hola%20Marcos%20Vallarta,%20quiero%20una%20cotizaci%C3%B3n" class="btn-brand text-white font-semibold px-6 py-3 rounded-xl shadow-soft inline-block">Cotizar por WhatsApp</a>
+        <!-- Botón Cómo llegar en footer -->
+        <a href="https://www.google.com/maps?q=Homero+45,+Vallarta+San+Jorge,+Guadalajara" target="_blank" rel="noopener" class="px-5 py-3 rounded-xl border border-neutral-300 hover:border-neutral-400 inline-block">Cómo llegar</a>
       </div>
     </div>
     <div class="max-w-6xl mx-auto px-6 mt-8 text-sm text-neutral-500">© <span id="y"></span> Marcos Vallarta. Todos los derechos reservados.</div>
@@ -320,13 +325,13 @@
     // WhatsApp auto-fill (selector)
     (function(){
       const phone = '523329231790';
-      const base = https://wa.me/${phone}?text=;
+      const base = `https://wa.me/${phone}?text=`;
       function update(){
         const m  = document.getElementById('selMaterial').value;
         const a  = document.getElementById('selAncho').value;
         const ac = document.getElementById('selAcabado').value;
         const u  = document.getElementById('selUso').value;
-        const msg = Hola Marcos Vallarta, quiero cotizar un marco. Material: ${m}; Ancho: ${a}; Acabado: ${ac}; Uso: ${u}. ¿Sugerencias y tiempos de entrega?;
+        const msg = `Hola Marcos Vallarta, quiero cotizar un marco. Material: ${m}; Ancho: ${a}; Acabado: ${ac}; Uso: ${u}. ¿Sugerencias y tiempos de entrega?`;
         document.getElementById('btnCotizar').setAttribute('href', base + encodeURIComponent(msg));
       }
       ['selMaterial','selAncho','selAcabado','selUso'].forEach(id => document.getElementById(id).addEventListener('change', update));
@@ -334,7 +339,7 @@
       document.getElementById('y').textContent = new Date().getFullYear();
     })();
 
-    // Lightbox básico
+    // Lightbox básico (ahora más grande)
     (function(){
       const lb = document.getElementById('lightbox');
       const lbImg = document.getElementById('lbImg');
