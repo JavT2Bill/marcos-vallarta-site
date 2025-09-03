@@ -48,10 +48,6 @@
       pointer-events:none;
     }
 
-    /* Chips de filtro */
-    .chip{border:1px solid #dfe6ea;border-radius:999px;padding:.5rem .9rem;cursor:pointer;user-select:none}
-    .chip[data-active="true"]{background:#E6FAFB;border-color:#28B8C0;color:#0b3a3d;font-weight:600}
-
     /* Lightbox */
     .lb-backdrop{display:none;position:fixed;inset:0;background:rgba(0,0,0,.8);z-index:80;align-items:center;justify-content:center;padding:24px}
     .lb-backdrop.open{display:flex}
@@ -190,20 +186,9 @@
       <div class="md:flex items-end justify-between gap-8">
         <div>
           <h2 class="font-serif text-3xl md:text-4xl">Catálogo de molduras</h2>
-          <p class="mt-2 text-neutral-700">Explora por estilo y revisa la <strong>clave</strong> para compartirla por WhatsApp.</p>
+          <p class="mt-2 text-neutral-700">Explora y revisa la <strong>clave</strong> para compartirla por WhatsApp.</p>
         </div>
         <a href="https://javt2bill.github.io/cotizador-marcos-vallarta/" target="_blank" rel="noopener" class="hidden md:inline-block btn-brand text-white font-semibold px-5 py-3 rounded-xl shadow-soft">Abrir simulador</a>
-      </div>
-
-      <!-- Filtros -->
-      <div class="mt-6 flex flex-wrap gap-2" id="filtros">
-        <button class="chip" data-filter="Todos" data-active="true">Todos</button>
-        <button class="chip" data-filter="Madera">Madera</button>
-        <button class="chip" data-filter="Metálico">Metálico</button>
-        <button class="chip" data-filter="Negro">Negro</button>
-        <button class="chip" data-filter="Blanco">Blanco</button>
-        <button class="chip" data-filter="Vintage">Vintage</button>
-        <button class="chip" data-filter="Minimalista">Minimalista</button>
       </div>
 
       <!-- Grid (se llena por JS) -->
@@ -400,54 +385,21 @@
         const grid = document.getElementById('grid-catalogo');
         grid.innerHTML = '';
 
-        const guessStyle = (t) => {
-          t = (t||'').toLowerCase();
-          if (/(oro|dorado|gold|bronce|cobre)/.test(t)) return 'Metálico';
-          if (/(plata|silver|aluminio|acero)/.test(t)) return 'Metálico';
-          if (/(negro|black|grafito|antracita)/.test(t)) return 'Negro';
-          if (/(blanco|ivory|white|marfil)/.test(t)) return 'Blanco';
-          if (/(madera|roble|nogal|cedro|caoba|wood|walnut|oak)/.test(t)) return 'Madera';
-          if (/(vintage|decapé|antique|versalles)/.test(t)) return 'Vintage';
-          if (/(minimal|minimalista|slim|lineal|gallery)/.test(t)) return 'Minimalista';
-          return 'Madera';
-        };
-
         images.forEach(it=>{
           const nombre = it.name;                         // p.ej. "ABC 05-09.png"
           const clave  = nombre.replace(/\.[^.]+$/, '');  // "ABC 05-09"
           const src    = it.download_url;                 // URL directa de GitHub
-          const estilo = guessStyle(nombre);
 
           const fig = document.createElement('figure');
           fig.className = 'relative bg-white rounded-2xl border border-neutral-200 p-2 shadow-soft cursor-zoom-in';
-          fig.dataset.estilo = estilo;
           fig.setAttribute('data-full', src);
-          fig.setAttribute('data-caption', `Clave: ${clave} • Estilo: ${estilo}`);
+          fig.setAttribute('data-caption', `Clave: ${clave}`);
           fig.innerHTML = `
             <span class="badge-clave">Clave: ${clave}</span>
             <img class="h-48 w-full object-contain bg-neutral-100 rounded-xl" src="${src}" alt="Moldura ${clave}">
-            <figcaption class="mt-3 text-neutral-700"><span class="text-neutral-500">Estilo:</span> ${estilo}</figcaption>
           `;
           grid.appendChild(fig);
         });
-
-        // Filtros por estilo
-        (function initFilters(){
-          const chips = document.querySelectorAll('#filtros .chip');
-          function apply(filter){
-            [...grid.children].forEach(fig=>{
-              const ok = (filter==='Todos') || (fig.dataset.estilo===filter);
-              fig.style.display = ok ? '' : 'none';
-            });
-          }
-          chips.forEach(ch=>{
-            ch.addEventListener('click', ()=>{
-              chips.forEach(c=>c.dataset.active='false');
-              ch.dataset.active='true';
-              apply(ch.dataset.filter);
-            });
-          });
-        })();
 
       }catch(err){
         console.error(err);
