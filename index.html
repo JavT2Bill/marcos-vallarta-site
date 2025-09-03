@@ -41,18 +41,31 @@
     html{scroll-behavior:smooth}
     .btn-brand{background:linear-gradient(135deg,#2FCAD2,#28B8C0 45%,#1FA2A9)}
     .focus-ring:focus{outline:3px solid #28B8C0;outline-offset:2px}
-    .hero-overlay{background:linear-gradient(180deg,rgba(255,255,255,.92),rgba(255,255,255,.70) 35%,rgba(255,255,255,0) 75%); pointer-events:none;}
+
+    /* Hero overlay sin bloquear clics */
+    .hero-overlay{
+      background:linear-gradient(180deg,rgba(255,255,255,.92),rgba(255,255,255,.70) 35%,rgba(255,255,255,0) 75%);
+      pointer-events:none;
+    }
+
     /* Chips de filtro */
     .chip{border:1px solid #dfe6ea;border-radius:999px;padding:.5rem .9rem;cursor:pointer;user-select:none}
     .chip[data-active="true"]{background:#E6FAFB;border-color:#28B8C0;color:#0b3a3d;font-weight:600}
+
     /* Lightbox */
     .lb-backdrop{display:none;position:fixed;inset:0;background:rgba(0,0,0,.8);z-index:80;align-items:center;justify-content:center;padding:24px}
     .lb-backdrop.open{display:flex}
     .lb-img{max-width:min(1400px,96vw);max-height:92vh;border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,.5)}
     .lb-caption{color:#fff;margin-top:12px;text-align:center;max-width:min(1200px,96vw)}
     .lb-close{position:absolute;top:14px;right:14px;background:#ffffff1a;border:1px solid #ffffff33;color:#fff;border-radius:10px;padding:8px 12px}
-    /* Badge de clave */
-    .badge-clave{position:absolute;top:10px;left:10px;background:#ffffffcc;color:#0b3a3d;border:1px solid #e6eef1;padding:4px 10px;border-radius:999px;font-size:.80rem;font-weight:600;backdrop-filter: blur(6px)}
+
+    /* Badge de clave en tarjetas */
+    .badge-clave{
+      position:absolute; top:10px; left:10px;
+      background:#ffffffcc; color:#0b3a3d; border:1px solid #e6eef1;
+      padding:4px 10px; border-radius:999px; font-size:.80rem; font-weight:600;
+      backdrop-filter: blur(6px);
+    }
   </style>
 </head>
 
@@ -72,6 +85,7 @@
   <header class="sticky top-0 z-40 bg-white/70 backdrop-blur border-b border-neutral-200">
     <div class="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between gap-6">
       <a href="#" class="flex items-center gap-3">
+        <!-- LOGO más grande -->
         <img src="./assets/logo-mv.png" alt="Marcos Vallarta" class="h-12 md:h-14 w-auto">
         <span class="font-serif text-2xl md:text-3xl">Marcos <span class="text-brand-500">Vallarta</span></span>
       </a>
@@ -82,6 +96,7 @@
         <a href="#proceso" class="hover:text-brand-600">Proceso</a>
         <a href="#opiniones" class="hover:text-brand-600">Opiniones</a>
         <a href="#selector" class="hover:text-brand-600">Cotiza</a>
+        <!-- Simulador en menú -->
         <a href="https://javt2bill.github.io/cotizador-marcos-vallarta/" target="_blank" rel="noopener" class="hover:text-brand-600">Simulador</a>
       </nav>
       <a href="https://wa.me/523329231790?text=Hola%20Marcos%20Vallarta,%20quiero%20cotizar%20un%20marco" class="btn-brand text-white font-semibold px-5 py-2 rounded-xl shadow-soft">Cotiza ahora</a>
@@ -92,6 +107,7 @@
   <section class="relative">
     <img src="./assets/hero-montaje.jpg" alt="Muestrario de molduras" class="w-full h-[50vh] object-cover">
     <div class="absolute inset-0 hero-overlay"></div>
+    <!-- z-10 asegura clics encima del overlay -->
     <div class="relative z-10 max-w-6xl mx-auto px-6 py-10 md:py-16">
       <h1 class="font-serif text-4xl md:text-6xl leading-tight">Enmarcaciones a la medida<br class="hidden md:block"> con <span class="text-brand-600">acabado de galería</span></h1>
       <p class="mt-4 max-w-2xl text-lg text-neutral-700">Pinturas, diplomas, camisetas deportivas y recuerdos que merecen un marco perfecto. Conservación profesional y asesoría personalizada.</p>
@@ -99,6 +115,7 @@
         <a href="#servicios" class="px-5 py-3 rounded-xl border border-neutral-300 hover:border-neutral-400 focus-ring">Ver servicios</a>
         <a href="https://wa.me/523329231790?text=Hola%20Marcos%20Vallarta,%20quiero%20una%20cotizaci%C3%B3n" class="btn-brand text-white font-semibold px-5 py-3 rounded-xl shadow-soft">Escríbenos por WhatsApp</a>
         <a href="https://www.google.com/maps?q=Homero+45,+Vallarta+San+Jorge,+Guadalajara" target="_blank" rel="noopener" class="px-5 py-3 rounded-xl border border-neutral-300 hover:border-neutral-400 focus-ring">Cómo llegar</a>
+        <!-- Botón Simulador en héroe -->
         <a href="https://javt2bill.github.io/cotizador-marcos-vallarta/" target="_blank" rel="noopener" class="px-5 py-3 rounded-xl border border-brand-500 text-brand-600 hover:bg-brand-50 focus-ring">Simulador</a>
       </div>
     </div>
@@ -167,7 +184,7 @@
     </div>
   </section>
 
-  <!-- Catálogo -->
+  <!-- Catálogo (auto con GitHub API) -->
   <section id="catalogo" class="py-20">
     <div class="max-w-6xl mx-auto px-6">
       <div class="md:flex items-end justify-between gap-8">
@@ -189,23 +206,13 @@
         <button class="chip" data-filter="Minimalista">Minimalista</button>
       </div>
 
-      <!-- Grid -->
+      <!-- Grid (se llena por JS) -->
       <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6" id="grid-catalogo" aria-live="polite">
-        <!-- Fallbacks (se reemplazan al cargar el JSON) -->
-        <figure class="relative bg-white rounded-2xl border border-neutral-200 p-2 shadow-soft cursor-zoom-in" data-estilo="Madera" data-full="./assets/gal-2.jpg" data-caption="Clave: F000 • Estilo: Madera">
-          <span class="badge-clave">Clave: F000</span>
-          <img class="h-48 w-full object-contain bg-neutral-100 rounded-xl" src="./assets/gal-2.jpg" alt="Moldura Madera">
-          <figcaption class="mt-3 text-neutral-700"><span class="text-neutral-500">Estilo:</span> Madera</figcaption>
-        </figure>
-        <figure class="relative bg-white rounded-2xl border border-neutral-200 p-2 shadow-soft cursor-zoom-in" data-estilo="Metálico" data-full="./assets/gal-4.jpg" data-caption="Clave: F000 • Estilo: Metálico">
-          <span class="badge-clave">Clave: F000</span>
-          <img class="h-48 w-full object-contain bg-neutral-100 rounded-xl" src="./assets/gal-4.jpg" alt="Moldura Metálico">
-          <figcaption class="mt-3 text-neutral-700"><span class="text-neutral-500">Estilo:</span> Metálico</figcaption>
-        </figure>
-        <figure class="relative bg-white rounded-2xl border border-neutral-200 p-2 shadow-soft cursor-zoom-in" data-estilo="Negro" data-full="./assets/gal-1.jpg" data-caption="Clave: F000 • Estilo: Negro">
-          <span class="badge-clave">Clave: F000</span>
-          <img class="h-48 w-full object-contain bg-neutral-100 rounded-xl" src="./assets/gal-1.jpg" alt="Moldura Negro">
-          <figcaption class="mt-3 text-neutral-700"><span class="text-neutral-500">Estilo:</span> Negro</figcaption>
+        <!-- Fallback simple por si la API no responde -->
+        <figure class="relative bg-white rounded-2xl border border-neutral-200 p-2 shadow-soft">
+          <span class="badge-clave">Cargando…</span>
+          <div class="h-48 w-full rounded-xl bg-neutral-100 animate-pulse"></div>
+          <figcaption class="mt-3 text-neutral-500">Esperando imágenes…</figcaption>
         </figure>
       </div>
 
@@ -213,7 +220,7 @@
     </div>
   </section>
 
-  <!-- Selector -->
+  <!-- Selector de Molduras -->
   <section id="selector" class="py-20">
     <div class="max-w-6xl mx-auto px-6">
       <div class="md:flex items-end justify-between gap-8">
@@ -279,6 +286,27 @@
     </div>
   </section>
 
+  <!-- Proceso -->
+  <section id="proceso" class="py-20">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="font-serif text-3xl md:text-4xl">Nuestro proceso</h2>
+      <div class="grid md:grid-cols-3 gap-6 mt-10">
+        <div class="bg-white border border-neutral-200 rounded-2xl p-6">
+          <h3 class="font-semibold">1. Diagnóstico y propuesta</h3>
+          <p class="mt-2 text-neutral-700">Vemos tu pieza, proponemos moldura, paspartú y protección adecuada.</p>
+        </div>
+        <div class="bg-white border border-neutral-200 rounded-2xl p-6">
+          <h3 class="font-semibold">2. Producción cuidada</h3>
+          <p class="mt-2 text-neutral-700">Corte y armado profesional; conservación y materiales libres de ácido.</p>
+        </div>
+        <div class="bg-white border border-neutral-200 rounded-2xl p-6">
+          <h3 class="font-semibold">3. Entrega y montaje</h3>
+          <p class="mt-2 text-neutral-700">Revisión contigo y montaje listo para colgar.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Opiniones -->
   <section id="opiniones" class="py-20 bg-neutral-50 border-y border-neutral-200">
     <div class="max-w-6xl mx-auto px-6">
@@ -326,7 +354,7 @@
   </div>
 
   <script>
-    // Año
+    // Año dinámico
     document.addEventListener('DOMContentLoaded', ()=> {
       const y = document.getElementById('y');
       if (y) y.textContent = new Date().getFullYear();
@@ -352,55 +380,82 @@
       update();
     })();
 
-    // Carga catálogo con clave visible (lee assets/catalogo-molduras.json)
+    // --------- Catálogo: cargar fotos automáticamente desde la carpeta DUPLICADA ---------
     (async function(){
-      const grid = document.getElementById('grid-catalogo');
-      try{
-        const res = await fetch('./assets/catalogo-molduras.json', {cache:'no-store'});
-        if(!res.ok) return;
-        const data = await res.json();
-        if(!Array.isArray(data) || !data.length) return;
+      // Ajustado a tu repo y ruta actual (doble "assets")
+      const USER   = 'JavT2Bill';
+      const REPO   = 'marcos-vallarta-site';
+      const BRANCH = 'main';
+      const PATH   = 'assets/assets/molduras';
 
+      const api = `https://api.github.com/repos/${USER}/${REPO}/contents/${encodeURIComponent(PATH)}?ref=${BRANCH}`;
+
+      try{
+        const res = await fetch(api, { headers: { 'Accept': 'application/vnd.github+json' }});
+        if(!res.ok) throw new Error('No se pudo listar la carpeta: ' + res.status);
+        const list = await res.json();
+
+        const images = list.filter(it => it.type === 'file' && /\.(jpe?g|png|webp)$/i.test(it.name));
+
+        const grid = document.getElementById('grid-catalogo');
         grid.innerHTML = '';
-        for(const item of data){
+
+        const guessStyle = (t) => {
+          t = (t||'').toLowerCase();
+          if (/(oro|dorado|gold|bronce|cobre)/.test(t)) return 'Metálico';
+          if (/(plata|silver|aluminio|acero)/.test(t)) return 'Metálico';
+          if (/(negro|black|grafito|antracita)/.test(t)) return 'Negro';
+          if (/(blanco|ivory|white|marfil)/.test(t)) return 'Blanco';
+          if (/(madera|roble|nogal|cedro|caoba|wood|walnut|oak)/.test(t)) return 'Madera';
+          if (/(vintage|decapé|antique|versalles)/.test(t)) return 'Vintage';
+          if (/(minimal|minimalista|slim|lineal|gallery)/.test(t)) return 'Minimalista';
+          return 'Madera';
+        };
+
+        images.forEach(it=>{
+          const nombre = it.name;                         // p.ej. "ABC 05-09.png"
+          const clave  = nombre.replace(/\.[^.]+$/, '');  // "ABC 05-09"
+          const src    = it.download_url;                 // URL directa de GitHub
+          const estilo = guessStyle(nombre);
+
           const fig = document.createElement('figure');
           fig.className = 'relative bg-white rounded-2xl border border-neutral-200 p-2 shadow-soft cursor-zoom-in';
-          fig.dataset.estilo = item.estilo || 'Sin estilo';
-          fig.setAttribute('data-full', item.src);
-          const claveTxt = item.clave ? `Clave: ${item.clave}` : 'Clave: —';
-          const capTxt = `${claveTxt} • Estilo: ${item.estilo || '—'}`;
-          fig.setAttribute('data-caption', capTxt);
-
+          fig.dataset.estilo = estilo;
+          fig.setAttribute('data-full', src);
+          fig.setAttribute('data-caption', `Clave: ${clave} • Estilo: ${estilo}`);
           fig.innerHTML = `
-            <span class="badge-clave">${claveTxt}</span>
-            <img class="h-48 w-full object-contain bg-neutral-100 rounded-xl" src="${item.src}" alt="${item.alt || ('Moldura ' + (item.clave||''))}">
-            <figcaption class="mt-3 text-neutral-700"><span class="text-neutral-500">Estilo:</span> ${item.estilo || '—'}</figcaption>
+            <span class="badge-clave">Clave: ${clave}</span>
+            <img class="h-48 w-full object-contain bg-neutral-100 rounded-xl" src="${src}" alt="Moldura ${clave}">
+            <figcaption class="mt-3 text-neutral-700"><span class="text-neutral-500">Estilo:</span> ${estilo}</figcaption>
           `;
           grid.appendChild(fig);
-        }
-      }catch(e){ /* fallback silencioso */ }
-    })();
-
-    // Filtros por estilo
-    (function(){
-      const chips = document.querySelectorAll('#filtros .chip');
-      const grid = document.getElementById('grid-catalogo');
-      function apply(filter){
-        [...grid.children].forEach(fig=>{
-          const ok = (filter==='Todos') || (fig.dataset.estilo===filter);
-          fig.style.display = ok ? '' : 'none';
         });
+
+        // Filtros por estilo
+        (function initFilters(){
+          const chips = document.querySelectorAll('#filtros .chip');
+          function apply(filter){
+            [...grid.children].forEach(fig=>{
+              const ok = (filter==='Todos') || (fig.dataset.estilo===filter);
+              fig.style.display = ok ? '' : 'none';
+            });
+          }
+          chips.forEach(ch=>{
+            ch.addEventListener('click', ()=>{
+              chips.forEach(c=>c.dataset.active='false');
+              ch.dataset.active='true';
+              apply(ch.dataset.filter);
+            });
+          });
+        })();
+
+      }catch(err){
+        console.error(err);
+        // Si hubo error, el fallback inicial queda visible
       }
-      chips.forEach(ch=>{
-        ch.addEventListener('click', ()=>{
-          chips.forEach(c=>c.dataset.active='false');
-          ch.dataset.active='true';
-          apply(ch.dataset.filter);
-        });
-      });
     })();
 
-    // Lightbox (portafolio + catálogo)
+    // --------- Lightbox (portafolio + catálogo) ----------
     (function(){
       const lb = document.getElementById('lightbox');
       const lbImg = document.getElementById('lbImg');
